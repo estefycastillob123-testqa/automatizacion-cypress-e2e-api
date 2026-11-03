@@ -1,0 +1,43 @@
+HALLAZGOS Y CONCLUSIONES
+
+Autora: Estefanía Castillo Bone
+
+1. RESULTADOS OBTENIDOS
+
+Se implementaron y ejecutaron seis pruebas automatizadas mediante Cypress:
+
+- Dos pruebas relacionadas con el flujo web de SauceDemo.
+- Cuatro pruebas de servicios REST de Demoblaze.
+
+Todas las pruebas finalizaron satisfactoriamente, con el siguiente resultado:
+
+- Total de pruebas: 6
+- Pruebas exitosas: 6
+- Pruebas fallidas: 0
+
+2. HALLAZGOS EN SAUCEDEMO
+
+- El formulario de inicio de sesión presenta correctamente los campos de usuario, contraseña y el botón de acceso.
+- Las credenciales válidas permiten acceder al catálogo de productos.
+- Los productos seleccionados se agregan correctamente al carrito.
+- El carrito conserva los dos productos seleccionados.
+- El proceso de checkout permite ingresar la información del comprador.
+- La compra finaliza correctamente y presenta el mensaje de confirmación de la orden.
+
+3. HALLAZGOS EN DEMOBLAZE API
+
+- El servicio signup permite registrar usuarios nuevos y responde con código HTTP 200.
+- Al intentar registrar nuevamente el mismo usuario, el servicio responde con el mensaje “This user already exist.”.
+- El servicio login permite autenticar al usuario registrado y devuelve un token de autenticación.
+- Al utilizar una contraseña incorrecta, el servicio responde con el mensaje “Wrong password.”.
+- Demoblaze utiliza el código HTTP 200 tanto para respuestas exitosas como para errores funcionales, comunicando estos últimos mediante el atributo errorMessage del cuerpo de la respuesta.
+
+4. CONCLUSIONES
+
+Cypress permitió automatizar tanto pruebas web de extremo a extremo como pruebas de servicios REST dentro del mismo proyecto.
+
+Las validaciones implementadas comprueban códigos de respuesta, contenido del cuerpo, mensajes funcionales, navegación, elementos visibles y resultados finales.
+
+La generación dinámica del nombre de usuario evita conflictos entre ejecuciones y permite repetir las pruebas de registro.
+
+El resultado final confirma el funcionamiento satisfactorio de los escenarios evaluados en SauceDemo y Demoblaze.
